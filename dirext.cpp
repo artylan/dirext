@@ -38,10 +38,10 @@ void dirext::recourse_dir(QString dir, QApplication &app, ProgressDialog &dlg, Q
             if (progress % 1000 == 0) {
                 dlg.setProgress(progress);
                 app.processEvents();
-                if (dlg.isCanceled()) {
-                    break;
-                }
             }
+        }
+        if (dlg.isCanceled()) {
+            return;
         }
     }
 }
