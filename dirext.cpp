@@ -18,7 +18,7 @@ QList<stats> dirext::create_ext_map(QString &dir, QApplication &app, ProgressDia
 
 void dirext::recourse_dir(QString dir, QApplication &app, ProgressDialog &dlg, QMap<QString, stats> &ext_map)
 {
-    QFileInfoList entries = QDir(dir).entryInfoList(QDir::NoDotAndDotDot | QDir::Dirs | QDir::Files);
+    QFileInfoList entries = QDir(dir).entryInfoList(QDir::NoDotAndDotDot | QDir::Dirs | QDir::Files | QDir::NoSymLinks);
     for (const auto &entry: entries) {
         if (entry.isDir()) {
             recourse_dir(entry.absoluteFilePath(), app, dlg, ext_map);
