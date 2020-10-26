@@ -1,10 +1,9 @@
 #include "widget.h"
 #include "dirext.h"
 #include "progressdialog.h"
-#include "filesystem"
-#include <iostream>
 #include <QApplication>
 #include <QFileDialog>
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
@@ -17,16 +16,15 @@ int main(int argc, char *argv[])
                                                       QFileDialog::ShowDirsOnly
                                                       | QFileDialog::DontResolveSymlinks);
         if (file_name == Q_NULLPTR) {
-            std::wcout << L"Sie haben kein Verzeichnis angegeben." << std::endl;
+            qDebug() << "Sie haben kein Verzeichnis angegeben.";
             return 1;
         }
     } else {
         file_name = QCoreApplication::arguments().at(1);
-        auto path = std::filesystem::path(std::wstring((const wchar_t*)file_name.utf16()));
-        std::error_code ec; // For using the non-throwing overloads of functions below.
-        if (!std::filesystem::is_directory(path, ec))
+        QFileInfo file_info(file_name);
+        if (!file_info.isDir())
         {
-            std::wcout << path << L" ist kein Verzeichnis." << std::endl;
+            qDebug() << file_name << "ist kein Verzeichnis.";
             return 1;
         }
     }
