@@ -2,7 +2,7 @@
 #include "ui_progressdialog.h"
 
 ProgressDialog::ProgressDialog(QWidget *parent) :
-    QDialog(parent),
+    QDialog(parent, Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
     ui(new Ui::ProgressDialog)
 {
     ui->setupUi(this);
@@ -34,4 +34,10 @@ int ProgressDialog::getProgress()
 void ProgressDialog::on_pushButton_clicked()
 {
     canceled = true;
+}
+
+void ProgressDialog::closeEvent(QCloseEvent *event)
+{
+    canceled = true;
+    QDialog::closeEvent(event);
 }
