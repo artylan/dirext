@@ -3,7 +3,9 @@
 #include "customtablemodel.h"
 #include "mynumberformatdelegate.h"
 #include "myproxymodel.h"
+#include "dirdialog.h"
 #include <QSettings>
+#include <QDebug>
 
 constexpr char COMPANY[] = "WAS";
 constexpr char PROG[] = "DirExtWin";
@@ -36,6 +38,7 @@ Widget::Widget(QList<stats> stats_list, int progress, QString dir_path, QWidget 
     ui->tableView->horizontalHeader()->setStretchLastSection(true);
     ui->tableView->setColumnWidth(0, 110);
     ui->tableView->setColumnWidth(1, 150);
+    ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
     QHeaderView *verticalHeader = ui->tableView->verticalHeader();
     verticalHeader->setSectionResizeMode(QHeaderView::Fixed);
     verticalHeader->setDefaultSectionSize(12);
@@ -78,3 +81,25 @@ Widget::~Widget()
 {
     delete ui;
 }
+
+void Widget::on_tableView_doubleClicked(const QModelIndex &index)
+{
+    QModelIndex nIndex = ui->tableView->model()->index(index.row(), 0);
+    auto ext = ui->tableView->model()->data(nIndex, Qt::DisplayRole).toString();
+    qDebug() << ext;
+    QStringList dirList = getDirList(ext);
+    qDebug() << dirList;
+    DirDialog * dlg = new DirDialog(this, dirList);
+    dlg->exec();
+}
+
+QStringList Widget::getDirList(QString ext)
+{
+    for (auto stat: stats_list) {
+        if (stat.get_ext() == ext) {
+            return stat.getDirList();
+        }
+    }
+    return QStringList();
+}
+

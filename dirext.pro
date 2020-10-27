@@ -25,6 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++17
 
 SOURCES += \
+    dirdialog.cpp \
     dirext.cpp \
         main.cpp \
     mynumberformatdelegate.cpp \
@@ -34,6 +35,7 @@ SOURCES += \
     customtablemodel.cpp
 
 HEADERS += \
+    dirdialog.h \
     dirext.h \
     mynumberformatdelegate.h \
     myproxymodel.h \
@@ -43,6 +45,7 @@ HEADERS += \
     customtablemodel.h
 
 FORMS += \
+        dirdialog.ui \
         progressdialog.ui \
         widget.ui
 

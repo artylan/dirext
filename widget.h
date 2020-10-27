@@ -21,6 +21,9 @@ public:
 protected:
     void closeEvent(QCloseEvent *event) override;
 
+private slots:
+    void on_tableView_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::Widget *ui;
     QList<stats> stats_list;
@@ -29,6 +32,7 @@ private:
 
     void saveSettings();
     void loadSettings();
+    QStringList getDirList(QString ext);
 };
 
 #endif // WIDGET_H

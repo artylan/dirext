@@ -34,6 +34,7 @@ void dirext::recourse_dir(QString dir, QApplication &app, ProgressDialog &dlg, Q
             stats.set_ext(ext);
             stats.incCount(1);
             stats.incSize(entry.size());
+            stats.addDir(dir);
 
             ++progress;
             if (progress % 1000 == 0) {
