@@ -1,4 +1,5 @@
 #include "dirext.h"
+#include <QDir>
 #include <QDebug>
 
 QList<stats> dirext::create_ext_map(QString &dir, QApplication &app, ProgressDialog &dlg) {

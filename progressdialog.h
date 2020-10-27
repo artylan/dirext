@@ -2,7 +2,6 @@
 #define PROGRESSDIALOG_H
 
 #include <QDialog>
-#include <QLabel>
 
 namespace Ui {
 class ProgressDialog;
@@ -20,9 +19,6 @@ public:
     bool isCanceled();
     int getProgress();
 
-private slots:
-    void on_pushButton_clicked();
-
 protected:
     void closeEvent(QCloseEvent *event) override;
 
@@ -30,6 +26,10 @@ private:
     Ui::ProgressDialog *ui;
     bool canceled;
     int progress;
+
+private slots:
+    void on_pushButton_clicked();
+
 };
 
 #endif // PROGRESSDIALOG_H

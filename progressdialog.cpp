@@ -18,7 +18,7 @@ void ProgressDialog::setProgress(int progress)
 {
     this->progress = progress;
     ui->progressBar->setValue((progress / 1000) % 100);
-    ui->progressLabel->setText("Besuchte Dateien: " + QString::number(progress));
+    ui->progressLabel->setText(tr("Number of inspected files:") + " " + QString::number(progress));
 }
 
 bool ProgressDialog::isCanceled()

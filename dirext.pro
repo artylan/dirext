@@ -47,4 +47,5 @@ FORMS += \
         widget.ui
 
 RESOURCES += \
-    resources.qrc
+    resources.qrc \
+    translations.qrc

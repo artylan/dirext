@@ -1,7 +1,4 @@
 #include "customtablemodel.h"
-#include <QFont>
-#include <QBrush>
-#include <QTime>
 
 CustomTableModel::CustomTableModel(QObject * parent, QList<stats> stats_list ) : QAbstractTableModel(parent), stats_list(stats_list)
 {
@@ -60,13 +57,13 @@ QVariant CustomTableModel::headerData(int section, Qt::Orientation orientation, 
         {
             switch (section) {
             case 0:
-                return QString("Erweiterung");
+                return tr("Extension");
                 break;
             case 1:
-                return QString("Anzahl");
+                return tr("Number of files");
                 break;
             case 2:
-                return QString("Größe");
+                return tr("Size in Bytes");
                 break;
             default:
                 return QString("Default");
@@ -80,5 +77,4 @@ QVariant CustomTableModel::headerData(int section, Qt::Orientation orientation, 
 
     }
     return QVariant();
-
 }

@@ -22,8 +22,8 @@ Widget::Widget(QList<stats> stats_list, int progress, QString dir_path, QWidget 
 {
     ui->setupUi(this);
 
-    ui->labelDir->setText("Verzeichnis: " + dir_path);
-    ui->labelProgress->setText("Besuchte Dateien: " + QString::number(progress));
+    ui->labelDir->setText(tr("Directory:") + " " + dir_path);
+    ui->labelProgress->setText(tr("Number of inspected files:") + " " + QString::number(progress));
 
     CustomTableModel * model = new CustomTableModel(this, stats_list);
     MyProxyModel * proxyModel = new MyProxyModel(this);

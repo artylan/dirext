@@ -17,6 +17,9 @@
    <iconset resource="resources.qrc">
     <normaloff>:/images/magnifying_glass.png</normaloff>:/images/magnifying_glass.png</iconset>
   </property>
+  <property name="locale">
+   <locale language="English" country="UnitedKingdom"/>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="progressLabel">
@@ -27,6 +30,9 @@
    </item>
    <item>
     <widget class="QProgressBar" name="progressBar">
+     <property name="locale">
+      <locale language="English" country="UnitedKingdom"/>
+     </property>
      <property name="value">
       <number>0</number>
      </property>
@@ -49,8 +55,11 @@
      </item>
      <item>
       <widget class="QPushButton" name="pushButton">
+       <property name="locale">
+        <locale language="English" country="UnitedKingdom"/>
+       </property>
        <property name="text">
-        <string>Abbrechen</string>
+        <string>Cancel</string>
        </property>
       </widget>
      </item>

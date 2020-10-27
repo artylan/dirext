@@ -2,6 +2,7 @@
 #include "dirext.h"
 #include "progressdialog.h"
 #include <QApplication>
+#include <QTranslator>
 #include <QFileDialog>
 #include <QDebug>
 
@@ -9,14 +10,19 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
+    QTranslator translator;
+    // look up :/translations/dirext_de.qm
+    if (translator.load(QLocale(), QLatin1String("dirext"), QLatin1String("_"), QLatin1String(":/translations")))
+        QCoreApplication::installTranslator(&translator);
+
     QString file_name;
-    if (QCoreApplication::arguments().count() != 2) {
-        file_name = QFileDialog::getExistingDirectory(Q_NULLPTR, "Besuche Verzeichnis",
+    if (QCoreApplication::arguments().count() < 2) {
+        file_name = QFileDialog::getExistingDirectory(Q_NULLPTR, QObject::tr("Inspect directory"),
                                                       "c:/",
                                                       QFileDialog::ShowDirsOnly
                                                       | QFileDialog::DontResolveSymlinks);
         if (file_name == Q_NULLPTR) {
-            qDebug() << "Sie haben kein Verzeichnis angegeben.";
+            qDebug() << QObject::tr("You haven't specified a directory.");
             return 1;
         }
     } else {
@@ -24,7 +30,7 @@ int main(int argc, char *argv[])
         QFileInfo file_info(file_name);
         if (!file_info.isDir())
         {
-            qDebug() << file_name << "ist kein Verzeichnis.";
+            qDebug() << file_name << QObject::tr("doesn't exist or isn't a directory.");
             return 1;
         }
     }
