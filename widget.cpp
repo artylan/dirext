@@ -34,6 +34,8 @@ Widget::Widget(QList<stats> stats_list, int progress, QString dir_path, QWidget 
     ui->tableView->setModel(proxyModel );
     ui->tableView->sortByColumn(0, Qt::AscendingOrder);
     ui->tableView->horizontalHeader()->setStretchLastSection(true);
+    ui->tableView->setColumnWidth(0, 110);
+    ui->tableView->setColumnWidth(1, 150);
     QHeaderView *verticalHeader = ui->tableView->verticalHeader();
     verticalHeader->setSectionResizeMode(QHeaderView::Fixed);
     verticalHeader->setDefaultSectionSize(12);
