@@ -28,6 +28,7 @@ Widget::Widget(QList<stats> stats_list, int progress, QString dir_path, QWidget 
 
     CustomTableModel * model = new CustomTableModel(this, stats_list);
     MyProxyModel * proxyModel = new MyProxyModel(this);
+    proxyModel->setSortCaseSensitivity(Qt::CaseInsensitive);
     proxyModel->setSourceModel(model);
     ui->tableView->setStyleSheet("QHeaderView::section { background-color:lightgray } QTableCornerButton::section {background-color: lightgray }");
     ui->tableView->setItemDelegateForColumn(1, new MyNumberFormatDelegate(this));
