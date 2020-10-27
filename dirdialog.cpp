@@ -2,6 +2,8 @@
 #include "ui_dirdialog.h"
 #include <QStringListModel>
 #include <QClipboard>
+#include <QDesktopServices>
+#include <QUrl>
 
 DirDialog::DirDialog(QWidget *parent, QStringList dirList) :
     QDialog(parent),
@@ -27,4 +29,6 @@ void DirDialog::on_listView_doubleClicked(const QModelIndex &index)
     auto dir = ui->listView->model()->data(index, Qt::DisplayRole).toString();
     QClipboard *myClipboard = QApplication::clipboard();
     myClipboard->setText(dir);
+
+    QDesktopServices::openUrl( QUrl::fromLocalFile( dir ) );
 }
