@@ -60,7 +60,7 @@
     <message>
         <location filename="../widget.ui" line="14"/>
         <source>DirExt</source>
-        <translation>DieExt</translation>
+        <translation type="unfinished">DirExt</translation>
     </message>
     <message>
         <location filename="../widget.cpp" line="25"/>
