@@ -5,7 +5,6 @@
 #include "myproxymodel.h"
 #include "dirdialog.h"
 #include <QSettings>
-#include <QDebug>
 
 constexpr char COMPANY[] = "WAS";
 constexpr char PROG[] = "DirExtWin";
@@ -86,9 +85,7 @@ void Widget::on_tableView_doubleClicked(const QModelIndex &index)
 {
     QModelIndex nIndex = ui->tableView->model()->index(index.row(), 0);
     auto ext = ui->tableView->model()->data(nIndex, Qt::DisplayRole).toString();
-    qDebug() << ext;
     QStringList dirList = getDirList(ext);
-    qDebug() << dirList;
     DirDialog * dlg = new DirDialog(this, dirList);
     dlg->exec();
 }
