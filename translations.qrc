@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>translations/dirext_de.qm</file>
+        <file>translations/dirext_pl.qm</file>
     </qresource>
 </RCC>
