@@ -6,7 +6,7 @@
 #include <QUrl>
 
 DirDialog::DirDialog(QWidget *parent, QStringList dirList, QString extension) :
-    QDialog(parent),
+    QDialog(parent, Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
     ui(new Ui::DirDialog),
     dirList(dirList),
     extension(extension)
