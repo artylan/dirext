@@ -12,7 +12,7 @@ class DirDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit DirDialog(QWidget *parent = nullptr, QStringList dirList = QStringList());
+    explicit DirDialog(QWidget *parent = nullptr, QStringList dirList = QStringList(), QString extension = QString());
     ~DirDialog();
 
 private slots:
@@ -21,6 +21,7 @@ private slots:
 private:
     Ui::DirDialog *ui;
     QStringList dirList;
+    QString extension;
 };
 
 #endif // DIRDIALOG_H

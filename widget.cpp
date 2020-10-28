@@ -85,9 +85,9 @@ Widget::~Widget()
 void Widget::on_tableView_doubleClicked(const QModelIndex &index)
 {
     QModelIndex nIndex = ui->tableView->model()->index(index.row(), 0);
-    auto ext = ui->tableView->model()->data(nIndex, Qt::DisplayRole).toString();
-    QStringList dirList = getDirList(ext);
-    DirDialog * dlg = new DirDialog(this, dirList);
+    auto extension = ui->tableView->model()->data(nIndex, Qt::DisplayRole).toString();
+    QStringList dirList = getDirList(extension);
+    DirDialog * dlg = new DirDialog(this, dirList, extension);
     dlg->setAttribute(Qt::WA_DeleteOnClose);
     dlg->exec();
 }

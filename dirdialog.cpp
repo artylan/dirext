@@ -5,13 +5,15 @@
 #include <QDesktopServices>
 #include <QUrl>
 
-DirDialog::DirDialog(QWidget *parent, QStringList dirList) :
+DirDialog::DirDialog(QWidget *parent, QStringList dirList, QString extension) :
     QDialog(parent),
     ui(new Ui::DirDialog),
-    dirList(dirList)
+    dirList(dirList),
+    extension(extension)
 {
     ui->setupUi(this);
 
+    ui->labelExtension->setText(tr("Extension") + " " + extension);
     ui->label->setText(tr("Number of directories:") + " " + QString::number(dirList.size()));
 
     QStringListModel *model = new QStringListModel(this);
