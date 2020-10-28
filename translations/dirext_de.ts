@@ -20,6 +20,24 @@
     </message>
 </context>
 <context>
+    <name>DirDialog</name>
+    <message>
+        <location filename="../dirdialog.ui" line="14"/>
+        <source>DirExt</source>
+        <translation>DirExt</translation>
+    </message>
+    <message>
+        <location filename="../dirdialog.cpp" line="16"/>
+        <source>Extension:</source>
+        <translation>Erweiterung:</translation>
+    </message>
+    <message>
+        <location filename="../dirdialog.cpp" line="17"/>
+        <source>Number of directories:</source>
+        <translation>Anzahl der Verzeichnisse:</translation>
+    </message>
+</context>
+<context>
     <name>ProgressDialog</name>
     <message>
         <location filename="../progressdialog.ui" line="14"/>
@@ -60,15 +78,15 @@
     <message>
         <location filename="../widget.ui" line="14"/>
         <source>DirExt</source>
-        <translation type="unfinished">DirExt</translation>
+        <translation>DirExt</translation>
     </message>
     <message>
-        <location filename="../widget.cpp" line="25"/>
+        <location filename="../widget.cpp" line="26"/>
         <source>Directory:</source>
         <translation>Verzeichnis:</translation>
     </message>
     <message>
-        <location filename="../widget.cpp" line="26"/>
+        <location filename="../widget.cpp" line="27"/>
         <source>Number of inspected files:</source>
         <translation>Anzahl untersuchter Dateien:</translation>
     </message>
