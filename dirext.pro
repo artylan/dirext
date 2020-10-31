@@ -24,6 +24,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 CONFIG += c++17
 
+RC_ICONS = images/magnifying_glass_256.ico
+
 SOURCES += \
     dirdialog.cpp \
     dirext.cpp \
