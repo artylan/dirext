@@ -4,6 +4,7 @@
 #include <QApplication>
 #include <QTranslator>
 #include <QFileDialog>
+#include <QTime>
 #include <QDebug>
 
 int main(int argc, char *argv[])
@@ -40,6 +41,11 @@ int main(int argc, char *argv[])
     dlg.raise();
     dlg.activateWindow();
     app.processEvents();
+
+    // Wait for one second to avoid race condition, if directory has view files, and the progress dialog is not hidden else
+    QTime dieTime= QTime::currentTime().addSecs(1);
+        while (QTime::currentTime() < dieTime)
+            QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
 
     dirext dirext{};
     QList<stats> stats_list = dirext.create_ext_map(file_name, app, dlg);
