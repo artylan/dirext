@@ -7,7 +7,7 @@
 #include <QSettings>
 
 constexpr char COMPANY[] = "WAS";
-constexpr char PROG[] = "DirExtWin";
+constexpr char PROG[] = "DirExtQt";
 constexpr char WINDOW[] = "mainwindow";
 constexpr char GEOMETRY[] = "geometry";
 constexpr char MAXIMIZED[] = "maximized";

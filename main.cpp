@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 
     QTranslator translator;
     // look up :/translations/dirext_de.qm
-    if (translator.load(QLocale(), QLatin1String("dirext"), QLatin1String("_"), QLatin1String(":/translations")))
+    if (translator.load(QLocale(), QLatin1String("dirextqt"), QLatin1String("_"), QLatin1String(":/translations")))
         QCoreApplication::installTranslator(&translator);
 
     QString file_name;
