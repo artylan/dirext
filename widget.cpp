@@ -41,7 +41,7 @@ Widget::Widget(QList<stats> stats_list, int progress, QString dir_path, QWidget 
     ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
     QHeaderView *verticalHeader = ui->tableView->verticalHeader();
     verticalHeader->setSectionResizeMode(QHeaderView::Fixed);
-    verticalHeader->setDefaultSectionSize(12);
+    verticalHeader->setDefaultSectionSize(20);
 
     loadSettings();
 }
