@@ -24,6 +24,8 @@ protected:
 private slots:
     void on_tableView_doubleClicked(const QModelIndex &index);
 
+    void on_aboutButton_clicked();
+
 private:
     Ui::Widget *ui;
     QList<stats> stats_list;

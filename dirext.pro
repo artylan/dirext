@@ -27,6 +27,7 @@ CONFIG += c++11
 RC_ICONS = images/magnifying_glass_256.ico
 
 SOURCES += \
+    aboutdialog.cpp \
     dirdialog.cpp \
     dirext.cpp \
         main.cpp \
@@ -37,6 +38,7 @@ SOURCES += \
     customtablemodel.cpp
 
 HEADERS += \
+    aboutdialog.h \
     dirdialog.h \
     dirext.h \
     mynumberformatdelegate.h \
@@ -47,6 +49,7 @@ HEADERS += \
     customtablemodel.h
 
 FORMS += \
+        aboutdialog.ui \
         dirdialog.ui \
         progressdialog.ui \
         widget.ui

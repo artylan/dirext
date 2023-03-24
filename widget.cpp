@@ -4,6 +4,7 @@
 #include "mynumberformatdelegate.h"
 #include "myproxymodel.h"
 #include "dirdialog.h"
+#include "aboutdialog.h"
 #include <QSettings>
 
 constexpr char COMPANY[] = "WAS";
@@ -102,3 +103,10 @@ QStringList Widget::getDirList(QString ext)
     return QStringList();
 }
 
+
+void Widget::on_aboutButton_clicked()
+{
+    AboutDialog * dlg = new AboutDialog(this);
+    dlg->setAttribute(Qt::WA_DeleteOnClose);
+    dlg->exec();
+}

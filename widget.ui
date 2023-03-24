@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>495</width>
-    <height>300</height>
+    <height>330</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -55,6 +55,13 @@
      <attribute name="verticalHeaderCascadingSectionResizes">
       <bool>true</bool>
      </attribute>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="aboutButton">
+     <property name="text">
+      <string>About</string>
+     </property>
     </widget>
    </item>
   </layout>
