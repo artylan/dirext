@@ -5,6 +5,6 @@ This small app displays an overview of file extensions of all files in a selecte
 
 It uses only Qt data types, so it should run on Mac also.
 
-If you call it from command line, you can pass a directory as first (and only) parameter. If you call it without parameters, a file dialog appears, where you can specify the directory.
+If you call it from command line, you can pass a directory as first and only parameter. If you call it without parameters, a file dialog appears, where you can specify the directory.
 
 You can download an Windows 10 installer at https://artur-wystub.de/blog/dirextqt/. Have fun.
